@@ -1,11 +1,11 @@
 {
-    "name": "ag-develop/nerd-hunters-events",
-    "description": "Event catalog for nerd-hunters project",
+    "name": "ag-develop/object-mirror",
+    "description": "Library for mirroring objects over rabbitmq queues or any other medium using json serialized data",
     "type": "metapackage",
     "autoload": {
         "psr-4": {
-            "AgDevelop\\NerdHuntersEvents\\": "src/",
-            "AgDevelop\\NerdHuntersEvents\\Tests": "tests/"
+            "AgDevelop\\ObjectMirror\\": "src/",
+            "AgDevelop\\ObjectMirror\\Tests\\": "tests/"
         }
     },
     "require": {
