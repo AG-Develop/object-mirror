@@ -1,0 +1,14 @@
+{
+    "name": "ag-develop/nerd-hunters-events",
+    "description": "Event catalog for nerd-hunters project",
+    "type": "metapackage",
+    "autoload": {
+        "psr-4": {
+            "AgDevelop\\NerdHuntersEvents\\": "src/",
+            "AgDevelop\\NerdHuntersEvents\\Tests": "tests/"
+        }
+    },
+    "require": {
+        "spatie/data-transfer-object": "^3.8"
+    }
+}
