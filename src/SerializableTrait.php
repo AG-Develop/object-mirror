@@ -2,11 +2,13 @@
 
 namespace AgDevelop\ObjectMirror;
 
+use ReflectionObject;
+
 trait SerializableTrait
 {
     public function jsonSerialize(): mixed
     {
-        $reflection = new \ReflectionObject($this);
+        $reflection = new ReflectionObject($this);
 
         $properties = $reflection->getProperties();
 

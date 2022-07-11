@@ -2,18 +2,19 @@
 
 namespace AgDevelop\ObjectMirror\Deserializer\V1;
 
-use AgDevelop\ObjectMirror\Deserializer\DeserializerInterface;
+use AgDevelop\Interface\Json\DeserializerInterface;
 use AgDevelop\ObjectMirror\Deserializer\V1\JsonData\EnvelopeJsonData;
 use AgDevelop\ObjectMirror\Envelope\Envelope;
 use AgDevelop\ObjectMirror\Exception\DeserializerException;
+use stdClass;
 
 class Deserializer implements DeserializerInterface
 {
-    protected \stdClass $jsonData;
+    protected stdClass $jsonData;
     protected object $object;
     protected Envelope $envelope;
 
-    public function __construct(\stdClass $jsonData)
+    public function __construct(stdClass $jsonData)
     {
         $this->jsonData = $jsonData;
 

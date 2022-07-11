@@ -2,16 +2,18 @@
 
 namespace AgDevelop\ObjectMirror\Deserializer\V1;
 
-use AgDevelop\ObjectMirror\Deserializer\DeserializerInterface;
+use AgDevelop\Interface\Json\DeserializerInterface;
 use AgDevelop\ObjectMirror\Deserializer\V1\JsonData\JsonData;
 use AgDevelop\ObjectMirror\Exception\DeserializerException;
+use ReflectionClass;
+use stdClass;
 
 class ObjectDeserializer implements DeserializerInterface
 {
-    protected \stdClass $jsonData;
+    protected stdClass $jsonData;
     protected object $object;
 
-    public function __construct(\stdClass $jsonData)
+    public function __construct(stdClass $jsonData)
     {
         $this->jsonData = $jsonData;
     }
@@ -29,11 +31,11 @@ class ObjectDeserializer implements DeserializerInterface
             throw new DeserializerException(sprintf('Class does not %s exist', $data->origin));
         }
 
-        $reflector = new \ReflectionClass($data->origin);
+        $reflector = new ReflectionClass($data->origin);
         $this->object = $reflector->newInstanceWithoutConstructor();
 
         foreach (get_object_vars($data->properties) as $name => $value) {
-            if ($value instanceof \stdClass && isset($value->origin)) {
+            if ($value instanceof stdClass && isset($value->origin)) {
                 $deserializer = new self($value);
                 $deserializer->deserialize();
                 $value = $deserializer->getObject();

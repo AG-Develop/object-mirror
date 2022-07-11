@@ -2,7 +2,8 @@
 
 namespace AgDevelop\ObjectMirror\Serializer;
 
-use AgDevelop\ObjectMirror\Serializer\V1\Serializer;
+use AgDevelop\Interface\Json\SerializerInterface;
+use ReflectionObject;
 
 class SerializerBuilder
 {
@@ -20,7 +21,7 @@ class SerializerBuilder
 
     protected function getSerializerClassName($version) : string
     {
-        $class = new \ReflectionObject($this);
+        $class = new ReflectionObject($this);
         $namespaceName = $class->getNamespaceName();
 
         return $namespaceName . '\\' . $version . '\\Serializer';

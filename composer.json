@@ -1,14 +1,21 @@
 {
     "name": "ag-develop/object-mirror",
     "description": "Library for mirroring objects over rabbitmq queues or any other medium using json serialized data",
-    "type": "metapackage",
+    "type": "library",
     "autoload": {
         "psr-4": {
             "AgDevelop\\ObjectMirror\\": "src/",
             "AgDevelop\\ObjectMirror\\Tests\\": "tests/"
         }
     },
+    "repositories" : [
+        {
+            "type" : "vcs",
+            "url" : "https://github.com/ag-develop/interfaces"
+        }
+    ],
     "require": {
-        "spatie/data-transfer-object": "^3.8"
+        "spatie/data-transfer-object": "^3.8",
+        "ag-develop/interfaces": "dev-feature/basic-interfaces-defined"
     }
 }

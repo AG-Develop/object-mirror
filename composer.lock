@@ -4,8 +4,38 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "84a505a266b94d73dd5f5904ea893f7c",
+    "content-hash": "3a5d308d06c541c0f572664cef3c7d06",
     "packages": [
+        {
+            "name": "ag-develop/interfaces",
+            "version": "dev-feature/basic-interfaces-defined",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AG-Develop/interfaces.git",
+                "reference": "b6821ba984cbc4e10f29e48c107e20b638caff7a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/AG-Develop/interfaces/zipball/b6821ba984cbc4e10f29e48c107e20b638caff7a",
+                "reference": "b6821ba984cbc4e10f29e48c107e20b638caff7a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "AgDevelop\\Interface\\": "src/"
+                }
+            },
+            "description": "Basic interfaces catalog",
+            "support": {
+                "source": "https://github.com/AG-Develop/interfaces/tree/feature/basic-interfaces-defined",
+                "issues": "https://github.com/AG-Develop/interfaces/issues"
+            },
+            "time": "2022-07-11T11:32:24+00:00"
+        },
         {
             "name": "spatie/data-transfer-object",
             "version": "3.8.1",
@@ -73,7 +103,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "ag-develop/interfaces": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

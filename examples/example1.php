@@ -2,9 +2,9 @@
 
 include (__DIR__ . "/../vendor/autoload.php");
 
+use AgDevelop\Interface\Json\SerializableInterface;
 use AgDevelop\ObjectMirror\Deserializer\DeserializerBuilder;
 use AgDevelop\ObjectMirror\Dto\Dto;
-use AgDevelop\ObjectMirror\SerializableInterface;
 use AgDevelop\ObjectMirror\SerializableTrait;
 use AgDevelop\ObjectMirror\Serializer\SerializerBuilder;
 

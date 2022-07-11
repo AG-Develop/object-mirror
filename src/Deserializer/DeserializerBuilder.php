@@ -2,7 +2,9 @@
 
 namespace AgDevelop\ObjectMirror\Deserializer;
 
+use AgDevelop\Interface\Json\DeserializerInterface;
 use AgDevelop\ObjectMirror\Exception\DeserializerException;
+use ReflectionObject;
 
 class DeserializerBuilder
 {
@@ -29,7 +31,7 @@ class DeserializerBuilder
 
     protected function getDeserializerClassName($version) : string
     {
-        $class = new \ReflectionObject($this);
+        $class = new ReflectionObject($this);
         $namespaceName = $class->getNamespaceName();
 
         return $namespaceName . '\\' . $version . '\\Deserializer';
