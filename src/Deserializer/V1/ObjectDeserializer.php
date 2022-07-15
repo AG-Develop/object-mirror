@@ -2,13 +2,12 @@
 
 namespace AgDevelop\ObjectMirror\Deserializer\V1;
 
-use AgDevelop\Interface\Json\DeserializerInterface;
 use AgDevelop\ObjectMirror\Deserializer\V1\JsonData\JsonData;
 use AgDevelop\ObjectMirror\Exception\DeserializerException;
 use ReflectionClass;
 use stdClass;
 
-class ObjectDeserializer implements DeserializerInterface
+class ObjectDeserializer
 {
     protected stdClass $jsonData;
     protected object $object;
@@ -18,7 +17,7 @@ class ObjectDeserializer implements DeserializerInterface
         $this->jsonData = $jsonData;
     }
 
-    public function deserialize()
+    public function deserialize(): self
     {
         /** @var JsonData $data */
         $data = $this->jsonData;
@@ -46,12 +45,11 @@ class ObjectDeserializer implements DeserializerInterface
             $reflectionProperty->setValue($this->object, $value);
         }
 
+        return $this;
     }
 
     public function getObject(): object
     {
         return $this->object;
     }
-
-
 }

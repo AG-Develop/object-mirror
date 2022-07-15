@@ -3,6 +3,7 @@
 namespace AgDevelop\ObjectMirror\Deserializer\V1;
 
 use AgDevelop\Interface\Json\DeserializerInterface;
+use AgDevelop\Interface\Json\EnvelopeInterface;
 use AgDevelop\ObjectMirror\Deserializer\V1\JsonData\EnvelopeJsonData;
 use AgDevelop\ObjectMirror\Envelope\Envelope;
 use AgDevelop\ObjectMirror\Exception\DeserializerException;
@@ -23,7 +24,7 @@ class Deserializer implements DeserializerInterface
     /**
      * @throws DeserializerException
      */
-    public function deserialize()
+    public function deserialize(): self
     {
         /** @var EnvelopeJsonData $jsonData  */
         $jsonData = $this->jsonData;
@@ -39,6 +40,8 @@ class Deserializer implements DeserializerInterface
         $deserializer = new ObjectDeserializer($jsonData->data);
         $deserializer->deserialize();
         $this->object = $deserializer->getObject();
+
+        return $this;
     }
 
     public function getObject(): object
@@ -47,7 +50,7 @@ class Deserializer implements DeserializerInterface
     }
 
 
-    public function getEnvelope(): Envelope
+    public function getEnvelope(): EnvelopeInterface
     {
         return $this->envelope;
     }

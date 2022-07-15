@@ -12,8 +12,6 @@ class ExampleEvent implements SerializableInterface {
 
     use SerializableTrait;
 
-    public const NAME = 'example.event';
-
     public function __construct(
         private SubjectDto $subject,
         private ParamDto $someParam,

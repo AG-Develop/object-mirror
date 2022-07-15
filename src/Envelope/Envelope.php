@@ -2,6 +2,7 @@
 
 namespace AgDevelop\ObjectMirror\Envelope;
 
+use AgDevelop\Interface\Json\EnvelopeInterface;
 use DateTimeInterface;
 
 class Envelope implements EnvelopeInterface
