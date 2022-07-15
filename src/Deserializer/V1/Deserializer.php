@@ -18,7 +18,6 @@ class Deserializer implements DeserializerInterface
     public function __construct(stdClass $jsonData)
     {
         $this->jsonData = $jsonData;
-
     }
 
     /**

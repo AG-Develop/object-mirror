@@ -30,7 +30,7 @@ class DeserializerBuilder implements DeserializerBuilderInterface
         return new $className($jsonData);
     }
 
-    protected function getDeserializerClassName($version) : string
+    protected function getDeserializerClassName($version): string
     {
         $class = new ReflectionObject($this);
         $namespaceName = $class->getNamespaceName();

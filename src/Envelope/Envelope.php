@@ -7,12 +7,10 @@ use DateTimeInterface;
 
 class Envelope implements EnvelopeInterface
 {
-
     public function __construct(
         private string $version,
         private DateTimeInterface $serializedAt,
     ) {
-
     }
 
     public function getSerializedAt(): DateTimeInterface

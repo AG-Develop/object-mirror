@@ -1,6 +1,6 @@
 <?php
 
-include (__DIR__ . "/../vendor/autoload.php");
+include(__DIR__ . "/../vendor/autoload.php");
 
 use AgDevelop\Interface\Json\SerializableInterface;
 use AgDevelop\ObjectMirror\Deserializer\DeserializerBuilder;
@@ -8,8 +8,8 @@ use AgDevelop\ObjectMirror\Dto\Dto;
 use AgDevelop\ObjectMirror\SerializableTrait;
 use AgDevelop\ObjectMirror\Serializer\SerializerBuilder;
 
-class ExampleEvent implements SerializableInterface {
-
+class ExampleEvent implements SerializableInterface
+{
     use SerializableTrait;
 
     public function __construct(
@@ -29,17 +29,20 @@ class ExampleEvent implements SerializableInterface {
     }
 }
 
-class SubjectDto extends Dto {
+class SubjectDto extends Dto
+{
     public string $var1;
     public int $var2;
 }
 
-class ParamDto extends Dto {
+class ParamDto extends Dto
+{
     public string $paramX;
 }
 
 $event = new ExampleEvent(
-    new SubjectDto([
+    new SubjectDto(
+        [
         'var1' => 'xxx',
         'var2' => 10]
     ),
