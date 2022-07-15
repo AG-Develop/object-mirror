@@ -1,6 +1,6 @@
 <?php
 
-include(__DIR__ . "/../vendor/autoload.php");
+include __DIR__.'/../vendor/autoload.php';
 
 use AgDevelop\Interface\Json\SerializableInterface;
 use AgDevelop\ObjectMirror\Deserializer\DeserializerBuilder;
@@ -44,10 +44,10 @@ $event = new ExampleEvent(
     new SubjectDto(
         [
         'var1' => 'xxx',
-        'var2' => 10]
+        'var2' => 10, ]
     ),
     new ParamDto([
-        'paramX'=> 2
+        'paramX' => 2,
     ]),
 );
 

@@ -25,13 +25,13 @@ class Deserializer implements DeserializerInterface
      */
     public function deserialize(): self
     {
-        /** @var EnvelopeJsonData $jsonData  */
+        /** @var EnvelopeJsonData $jsonData */
         $jsonData = $this->jsonData;
 
         try {
             $serializedAt = new \DateTimeImmutable($jsonData->serializedAt);
         } catch (\Exception $exception) {
-            throw new DeserializerException("Unknown timestamp format");
+            throw new DeserializerException('Unknown timestamp format');
         }
 
         $this->envelope = new Envelope($jsonData->version, $serializedAt);
@@ -47,7 +47,6 @@ class Deserializer implements DeserializerInterface
     {
         return $this->object;
     }
-
 
     public function getEnvelope(): EnvelopeInterface
     {

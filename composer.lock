@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/AG-Develop/interfaces.git",
-                "reference": "88b65c41b2c98e7da347a8e5499419367f27c51a"
+                "reference": "2b1c4b8e4f3a238114d91887507afb943f2bcde9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AG-Develop/interfaces/zipball/88b65c41b2c98e7da347a8e5499419367f27c51a",
-                "reference": "88b65c41b2c98e7da347a8e5499419367f27c51a",
+                "url": "https://api.github.com/repos/AG-Develop/interfaces/zipball/2b1c4b8e4f3a238114d91887507afb943f2bcde9",
+                "reference": "2b1c4b8e4f3a238114d91887507afb943f2bcde9",
                 "shasum": ""
             },
             "require": {
@@ -35,7 +35,7 @@
                 "source": "https://github.com/AG-Develop/interfaces/tree/feature/basic-interfaces-defined",
                 "issues": "https://github.com/AG-Develop/interfaces/issues"
             },
-            "time": "2022-07-15T10:31:39+00:00"
+            "time": "2022-07-15T12:56:32+00:00"
         },
         {
             "name": "psr/log",

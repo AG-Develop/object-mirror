@@ -13,7 +13,7 @@ class DeserializerBuilder implements DeserializerBuilderInterface
     {
         $jsonData = json_decode($eventJson);
 
-        if ($jsonData === null) {
+        if (null === $jsonData) {
             throw new DeserializerException('Cannot decode json!');
         }
 
@@ -24,7 +24,7 @@ class DeserializerBuilder implements DeserializerBuilderInterface
         $className = $this->getDeserializerClassName($jsonData->version);
 
         if (!class_exists($className)) {
-            throw new DeserializerException('Unsupported serializer version for given JSON data at version ' . $jsonData->version);
+            throw new DeserializerException('Unsupported serializer version for given JSON data at version '.$jsonData->version);
         }
 
         return new $className($jsonData);
@@ -35,6 +35,6 @@ class DeserializerBuilder implements DeserializerBuilderInterface
         $class = new ReflectionObject($this);
         $namespaceName = $class->getNamespaceName();
 
-        return $namespaceName . '\\' . $version . '\\Deserializer';
+        return $namespaceName.'\\'.$version.'\\Deserializer';
     }
 }

@@ -24,6 +24,6 @@ class SerializerBuilder
         $class = new ReflectionObject($this);
         $namespaceName = $class->getNamespaceName();
 
-        return $namespaceName . '\\' . $version . '\\Serializer';
+        return $namespaceName.'\\'.$version.'\\Serializer';
     }
 }
