@@ -2,11 +2,12 @@
 
 namespace AgDevelop\ObjectMirror\Deserializer;
 
+use AgDevelop\Interface\Json\DeserializerBuilderInterface;
 use AgDevelop\Interface\Json\DeserializerInterface;
 use AgDevelop\ObjectMirror\Exception\DeserializerException;
 use ReflectionObject;
 
-class DeserializerBuilder
+class DeserializerBuilder implements DeserializerBuilderInterface
 {
     public function build(string $eventJson): DeserializerInterface
     {
