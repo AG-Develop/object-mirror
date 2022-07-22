@@ -6,15 +6,20 @@ use AgDevelop\Interface\Json\DeserializerBuilderInterface;
 use AgDevelop\Interface\Json\DeserializerInterface;
 use AgDevelop\ObjectMirror\Exception\DeserializerException;
 use ReflectionObject;
+use stdClass;
 
 class DeserializerBuilder implements DeserializerBuilderInterface
 {
-    public function build(string $eventJson): DeserializerInterface
+    public function build(array|string|stdClass $json): DeserializerInterface
     {
-        $jsonData = json_decode($eventJson);
+        if (is_string($json)) {
+            $jsonData = json_decode($json, associative: false);
 
-        if (null === $jsonData) {
-            throw new DeserializerException('Cannot decode json!');
+            if (null === $jsonData) {
+                throw new DeserializerException('Cannot decode json!');
+            }
+        } else {
+            $jsonData = (object) $json;
         }
 
         if (!isset($jsonData->version)) {
