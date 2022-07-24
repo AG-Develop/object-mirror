@@ -3,6 +3,7 @@
 namespace AgDevelop\ObjectMirror\Serializer;
 
 use AgDevelop\Interface\Json\SerializerInterface;
+use AgDevelop\ObjectMirror\Exception\SerializerException;
 use ReflectionObject;
 
 class SerializerBuilder
@@ -15,6 +16,10 @@ class SerializerBuilder
     public function build(): SerializerInterface
     {
         $className = $this->getSerializerClassName($this->version);
+
+        if (!class_exists($className)) {
+            throw new SerializerException(sprintf('No serializer at version %s exists', $this->version));
+        }
 
         return new $className();
     }
