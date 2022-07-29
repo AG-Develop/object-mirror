@@ -30,11 +30,11 @@ class DeserializerBuilderTest extends TestCase
             ],
             [
                 ['version' => 'V1'],
-                "\AgDevelop\ObjectMirror\Deserializer\V1\Deserializer"
+                "\AgDevelop\ObjectMirror\Deserializer\V1\Deserializer",
             ],
             [
                 (object) ['version' => 'V1'],
-                "\AgDevelop\ObjectMirror\Deserializer\V1\Deserializer"
+                "\AgDevelop\ObjectMirror\Deserializer\V1\Deserializer",
             ],
         ];
     }
