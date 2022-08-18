@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
 
 class SerializerV1Test extends TestCase
 {
-    public function provideSerialize()
+    public function provideSerialize(): array
     {
         return [
             [
@@ -38,7 +38,7 @@ class SerializerV1Test extends TestCase
     }
 
     /** @dataProvider provideSerialize */
-    public function testSerialize(SerializableInterface $object, $expected)
+    public function testSerialize(SerializableInterface $object, $expected): void
     {
         if ($expected instanceof \Throwable) {
             $this->expectException(get_class($expected));

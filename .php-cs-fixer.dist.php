@@ -9,6 +9,8 @@ $finder = PhpCsFixer\Finder::create()
 $config = new PhpCsFixer\Config();
 return $config->setRules([
     '@Symfony' => true,
+    'void_return' => true,
 ])
     ->setFinder($finder)
+    ->setRiskyAllowed(true)
     ;

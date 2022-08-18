@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class DeserializerV1Test extends TestCase
 {
-    public function provideDeserialize()
+    public function provideDeserialize(): array
     {
         return [
             [
@@ -28,7 +28,7 @@ class DeserializerV1Test extends TestCase
     }
 
     /** @dataProvider provideDeserialize */
-    public function testDeserialize($json, $expectedObject, $expectedEnvelope)
+    public function testDeserialize($json, $expectedObject, $expectedEnvelope): void
     {
         if ($expectedObject instanceof \Throwable) {
             $this->expectException(get_class($expectedObject));
